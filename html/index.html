@@ -4,16 +4,21 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/e00d06d5d7.js"></script>
         <title>Portfolio</title>
         <link rel="stylesheet" href="../styles/normalize.css">
         <link rel="stylesheet" href="../styles/style.css">
         <script src="../js/main.js" type="module"></script>
-        <script src="https://kit.fontawesome.com/e00d06d5d7.js"></script>
     </head>
     <body>
         <header>
             <div class="logo">
-                <h1>F.</h1>
+                <h1>Franco.dev</h1>
             </div>
             <nav class="menu">
                 <ul>
@@ -32,6 +37,9 @@
                     <li>
                         <a href="#contactme">Contact me</a>
                     </li>
+                    <li>
+                        <button class="theme">Light mode</button>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -39,27 +47,109 @@
             <section class="presentation">
                 <article>
                     <h3 id="#home">
-                        I'm Franco.dev
+                        I’m Franco.dev
                     </h3>
                     <span>Full-stack and front-end web developer</span>
+                    <a href="#contactme">
+                        <button>
+                            Hire me
+                        </button>
+                    </a>
                 </article>
                 <section class="photo">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcxks_HhGa71KaDK2vYpa0cFX2aZRBaMt9lA&usqp=CAU" alt="my photo">
+                    <img src="../assets/images/photo.png" alt="my photo">
                 </section>
             </section>
             <section class="aboutme">
-                <h2 id="aboutme">About Me</h2>
+                <section class="content">
+                    <section class="layer">
+                        <section>
+                            <h2 id="aboutme">About me</h2>
+                        </section>
+                        <article>
+                            <p>
+                                I am a web developer who wants to learn every day,
+                                my goal would be to program as much as I can imagine,
+                                but for now I am content to be a better programmer
+                                and get a good job this year.
+                            </p>
+                            <p>I look forward to working with you!.</p>
+                        </article>
+                        <section class="buttons">
+                            <button>
+                                <a href="#projects">View Works</a>
+                            </button>
+                            <button>
+                                <a href="../assets/file/cv.pdf" download="portfolio-Franco.dev">Download CV</a>
+                                <!-- !change cv -->
+                            </button>
+                        </section>
+                    </section>
+                </section>
             </section>
             <section class="services">
-                <h2 id="services">Services</h2>
+                <section class="content vertical-flex">
+                    <h2 id="services">Services</h2>
+                    <section class="grid-services">
+                        <article>
+                            <i class="fa-solid fa-book-open"></i>
+                            <h3>SPA & MPA</h3>
+                            <p>Single and Multiple Page Applications</p>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                            <h3>GUI</h3>
+                            <p>Graphical User Interface for your web</p>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-chalkboard"></i>
+                            <h3>CRUD</h3>
+                            <p>Web apps function as a restful API</p>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-jet-fighter"></i>
+                            <h3>Landing Page</h3>
+                            <p>Simple and fast, Let's go!</p>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <h3>E-commerce</h3>
+                            <p>The perfect virtual shop of your web</p>
+                        </article>
+                    </section>
+                </section>
             </section>
             <section class="projects">
-                <h2 id="projects">Projects</h2>
+                <section class="content vertical-flex">
+                    <h2 id="projects">Projects</h2>
+                    <section class="projects-categories">
+                        <h3>
+                            Frontend
+                        </h3>
+                    </section>
+                </section>
+            </section>
+            <section class="hire-me">
+                <section class="content vertical-flex">
+                    <h2>Have Any Project In Mind?</h2>
+                    <a href="#contactme">
+                        <button>
+                            Hire me
+                        </button>
+                    </a>
+                </section>
             </section>
             <section class="contactme">
-                <h2 id="contactme">Contact Me</h2>
+                <section class="content vertical-flex">
+                    <h2 id="contactme">Contact Me</h2>
+                </section>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <span>
+                2022
+                <a href="https://github.com/francoandreDev" target="_blank">Franco.dev</a>
+            </span>
+        </footer>
     </body>
 </html>

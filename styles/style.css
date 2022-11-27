@@ -1,21 +1,35 @@
 :root {
-    --light-bg: hsl(0, 0%, 98%);
-    --dark-bg: hsl(180, 1%, 17%);
-    --current-bg: var(--dark-bg);
-    --light-color: hsl(234, 9%, 22%);
-    --dark-color: hsl(0, 0%, 100%);
-    --current-color: var(--dark-color);
+    --light-bg-1: hsl(0, 0%, 85%);
+    --light-bg-2: hsl(0, 0%, 83%);
+    --light-color-main: hsl(234, 9%, 22%);
+    --light-color-secondary: hsl(234, 9%, 35%);
+    --dark-bg-1: hsl(0, 0%, 17%);
+    --dark-bg-2: hsl(0, 0%, 19%);
+    --dark-color-main: hsl(0, 0%, 100%);
+    --dark-color-secondary: hsl(0, 0%, 80%);
+    --current-bg-1: var(--dark-bg-1);
+    --current-bg-2: var(--dark-bg-2);
+    --current-color-main: var(--dark-color-main);
+    --current-color-secondary: var(--dark-color-secondary);
     --color: hsl(194, 79%, 41%);
     --shadow-color: hsla(0, 0%, 0%, 0.5);
+
+    --f-family-default: 'Poppins', sans-serif;
+    --f-family-presentation: 'Roboto', sans-serif;
 }
 
 * {
     box-sizing: border-box;
 }
 
+*::selection {
+    background-color: transparent;
+    text-shadow: 2px -2px 4px var(--color), 1px -1px 5px var(--shadow-color);
+}
+
 body {
-    background-color: var(--current-bg);
-    color: var(--current-color);
+    background-color: var(--current-bg-1);
+    color: var(--current-color-main);
 }
 
 header {
@@ -26,9 +40,12 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1.5rem 0;
-    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 15px 0.2px var(--shadow-color);
+    font-family: var(--f-family-default);
+    font-size: 16px;
+    font-weight: 500;
 }
 
 header > .logo {
@@ -57,7 +74,7 @@ header > .menu > ul > li {
     padding: 0 2rem;
 }
 
-header > .menu > ul > li > a {
+a {
     transition-property: color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
@@ -86,55 +103,544 @@ header > .menu > ul > li > a:hover::before {
     width: 100%;
 }
 
+header > .menu > ul > li > button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 1rem;
+    margin: 0 -1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+header > .menu > ul > li > button::first-letter {
+    text-transform: uppercase;
+}
+
+header > .menu > ul > li > button::before,
+header > .menu > ul > li > button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    translate: -50% -50%;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+
+header > .menu > ul > li > button::after {
+    opacity: 0;
+    content: 'Click me';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+header > .menu > ul > li > button:hover::before {
+    border: 1px solid var(--color);
+    animation: fluid-increase 0.5s linear forwards;
+    -webkit-animation: fluid-increase 0.5s linear forwards;
+}
+
+header > .menu > ul > li > button:hover::after {
+    animation: message-appear 4s ease-in-out;
+    -webkit-animation: message-appear 4s ease-in-out;
+}
+
+@keyframes fluid-increase {
+    0% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent
+        );
+    }
+    10% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            var(--color)
+        );
+    }
+    20% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            var(--color),
+            var(--color)
+        );
+    }
+    30% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    40% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    50% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    60% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    70% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    80% {
+        background-image: linear-gradient(
+            transparent,
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    90% {
+        background-image: linear-gradient(
+            transparent,
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+    100% {
+        background-image: linear-gradient(
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color),
+            var(--color)
+        );
+    }
+}
+
+@keyframes message-appear {
+    from {
+        translate: -50% 200%;
+        opacity: 0;
+    }
+    10% {
+        background-color: transparent;
+    }
+    20% {
+        opacity: 1;
+        translate: -50% -50%;
+    }
+    50% {
+        background-color: var(--current-bg-1);
+        translate: -50% -50%;
+        z-index: 1;
+    }
+    55% {
+        scale: 1;
+    }
+    60% {
+        scale: 1.1;
+    }
+    65% {
+        scale: 1;
+    }
+    75% {
+        background-color: var(--current-bg-1);
+        translate: -50% -50%;
+        opacity: 1;
+        z-index: 1;
+    }
+    76% {
+        background-color: transparent;
+    }
+    to {
+        translate: -50% -100%;
+    }
+}
+
 main {
     position: relative;
-    top: 12.5rem;
+    top: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 6rem;
     padding: 0 7rem;
+    font-family: var(--f-family-default);
+    overflow-x: hidden;
 }
 
 main h2 {
-    font-size: 2rem;
+    font-size: 45px;
     font-weight: bold;
 }
 
+main > section {
+    padding: 5rem;
+    width: 100vw;
+}
+
+main .content {
+    width: 80%;
+    height: 100%;
+}
+
+main > section:nth-child(2n) {
+    background-color: var(--current-bg-2);
+}
+
+main article {
+    padding: 0 5rem;
+}
+
 main .presentation {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     align-items: center;
+    padding-left: 0;
+    font-family: var(--f-family-presentation);
+}
+
+main > .presentation > article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     gap: 1rem;
 }
 
-main>section {
-    padding: 5rem;
-    width: 100%;
+main > .presentation > article > h3 {
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-main .presentation>section.photo {
-    width: 15rem;
-    height: 20rem;
+main > .presentation > article > span {
+    font-size: 23px;
+    margin-bottom: 2rem;
+    color: var(--current-color-secondary);
+}
+
+a {
+    color: inherit;
+}
+
+main > .presentation > article > a > button {
+    font-size: 20px;
+    font-weight: 600px;
+    margin-right: 15px;
+    padding: 20px 70px;
+}
+
+button {
+    border: none;
+    transition-property: background-color, border, color;
+    transition-duration: 0.5s, 0.4s, 0.25s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+    background-color: var(--color);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+button:hover {
+    background-color: transparent;
+    border: 1px solid var(--color);
+    color: var(--color);
+}
+
+main .presentation > section.photo {
+    width: 45%;
+    aspect-ratio: 1/1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .presentation > section.photo > img {
+    width: 100%;
+    height: 100%;
+}
+
+main .aboutme {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+main .aboutme > .content {
     position: relative;
 }
 
-main .presentation>section.photo>img {
+main .aboutme .layer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        'sub-title sub-title speak speak speak'
+        'sub-title sub-title buttons buttons buttons';
+    gap: 0 0.5em;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    justify-content: center;
 }
 
-main .presentation>section.photo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    z-index: -1;
+main .aboutme .layer > section:first-of-type {
+    grid-area: sub-title;
+    justify-self: center;
+    align-self: center;
+}
+
+main .aboutme .layer > article {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    grid-area: speak;
+}
+
+main p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--current-color-secondary);
+}
+
+main .aboutme h2 {
+    translate: 50% 0;
+}
+
+main .aboutme .layer > section:last-of-type {
+    margin-top: 2.2rem;
+    grid-area: buttons;
+    display: flex;
+    gap: 1.5rem;
+}
+
+main .aboutme .layer > section:last-of-type > button {
+    padding: 1.2rem 2.5rem;
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+section.services,
+section.projects,
+section.contactme {
+    display: flex;
+    justify-content: space-around;
+}
+
+.content.vertical-flex {
+    gap: 4rem;
+    align-items: center;
+}
+
+main > .services .grid-services {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(700px, 1fr));
+    grid-template-rows: repeat(3, 350px);
+    gap: 2rem;
+}
+
+main > .services .grid-services > article {
     width: 100%;
     height: 100%;
-    rotate: 35deg;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 7rem;
+    background-color: dimgray;
+    color: var(--current-color-main);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+main > .services .grid-services > article:nth-child(1) {
+    background: hsla(190, 100%, 50%, 0.5);
+    background: linear-gradient(
+        120deg,
+        hsla(190, 100%, 50%, 0.5) 0%,
+        hsla(210, 92%, 50%, 0.5) 100%
+    );
+}
+
+main > .services .grid-services > article:nth-child(2) {
+    background: hsla(50, 100%, 50%, 0.5);
+    background: linear-gradient(
+        120deg,
+        hsla(60, 100%, 50%, 0.5) 0%,
+        hsla(40, 92%, 50%, 0.5) 100%
+    );
+}
+main > .services .grid-services > article:nth-child(3) {
+    background: hsla(300, 100%, 50%, 0.5);
+    background: linear-gradient(
+        120deg,
+        hsla(320, 100%, 50%, 0.5) 0%,
+        hsla(300, 92%, 50%, 0.5) 100%
+    );
+}
+
+main > .services .grid-services > article:nth-child(4) {
+    background: hsla(150, 100%, 50%, 0.5);
+    background: linear-gradient(
+        120deg,
+        hsla(130, 100%, 50%, 0.5) 0%,
+        hsla(150, 92%, 50%, 0.5) 100%
+    );
+}
+
+main > .services .grid-services > article:nth-child(5) {
+    background: hsla(-20, 100%, 50%, 0.5);
+    background: linear-gradient(
+        120deg,
+        hsla(-20, 100%, 50%, 0.5) 0%,
+        hsla(0, 92%, 50%, 0.5) 100%
+    );
+}
+
+/*only grows if is alone on the bottom of the grid layout*/
+main > .services .grid-services > article:nth-child(2n + 1):last-child {
+    width: calc(2rem + 200%);
+}
+
+main > .services .grid-services > article * {
+    color: inherit;
+}
+
+main > .services .grid-services > article i {
+    margin: 18px 0;
+    font-size: 4rem;
+}
+
+main .hire-me > .content {
+    width: 100%;
+}
+
+main .hire-me button {
+    padding: 2rem 5rem;
+    font-size: 1.5rem;
+}
+
+footer {
+    font-size: 15px;
+    font-family: var(--f-family-default);
+    font-weight: 300;
+    display: flex;
+    gap: .5rem;
 }
