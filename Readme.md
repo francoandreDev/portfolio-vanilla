@@ -6,14 +6,14 @@ This project is my web portfolio.
 
 ## **Structure Outer Portfolio**
 
-| Folder | Sub-folders  | Files                    |
-| ------ | ------------ | ------------------------ |
-| assets | file, images | -, -                     |
-| html   | -            | index.html               |
-| js     | -            | main.js                  |
-| styles | -            | normalize.css, style.css |
-| -      | -            | .gitignore               |
-| -      | -            | Readme.md                |
+| Folder | Sub-folders                     | Files                                                                |
+| ------ | ------------------------------- | -------------------------------------------------------------------- |
+| assets | file, images: {desktop, mobile} | cv.pdf, photo.png, {projects-desktop-images, projects-mobile-images} |
+| html   | -                               | index.html                                                           |
+| js     | -                               | main.js                                                              |
+| styles | -                               | normalize.css, style.css                                             |
+| -      | -                               | .gitignore                                                           |
+| -      | -                               | Readme.md                                                            |
 
 ## **Structure Inner Portfolio**
 
