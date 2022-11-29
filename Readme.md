@@ -17,11 +17,12 @@ This project is my web portfolio.
 
 ## **Structure Inner Portfolio**
 
-1. Home
-2. About me
-3. Services
-4. Projects
-5. Contact me
+1. Nav
+2. Home
+3. About me
+4. Services
+5. Projects
+6. Contact me
 
 ## **Technologies**
 
