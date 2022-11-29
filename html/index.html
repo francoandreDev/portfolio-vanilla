@@ -42,6 +42,10 @@
                     </li>
                 </ul>
             </nav>
+            <button class="menu-mobile">
+                <i class="fa-solid fa-bars" id="menu-bars"></i>
+                <i class="fa-solid fa-x" id="menu-x"></i>
+            </button>
         </header>
         <main>
             <section class="presentation">
@@ -92,26 +96,31 @@
                     <h2 id="services">Services</h2>
                     <section class="grid-services">
                         <article>
+                            <img alt="Image">
                             <i class="fa-solid fa-book-open"></i>
                             <h3>SPA & MPA</h3>
                             <p>Single and Multiple Page Applications</p>
                         </article>
                         <article>
+                            <img alt="Image">
                             <i class="fa-solid fa-chalkboard-user"></i>
                             <h3>GUI</h3>
                             <p>Graphical User Interface for your web</p>
                         </article>
                         <article>
+                            <img alt="Image">
                             <i class="fa-solid fa-chalkboard"></i>
                             <h3>CRUD</h3>
                             <p>Web apps function as a restful API</p>
                         </article>
                         <article>
+                            <img alt="Image">
                             <i class="fa-solid fa-jet-fighter"></i>
                             <h3>Landing Page</h3>
                             <p>Simple and fast, Let's go!</p>
                         </article>
                         <article>
+                            <img alt="Image">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <h3>E-commerce</h3>
                             <p>The perfect virtual shop of your web</p>
@@ -126,6 +135,31 @@
                         <h3>
                             Frontend
                         </h3>
+                        <div class="container-scroll">
+                            <div class="container-carrousel">
+                                <section class="carrousel">
+                                    <article class="rep-image"></article>
+                                </section>
+                                <section class="carrousel">
+                                    <article class="rep-image"></article>
+                                </section>
+                                <section class="carrousel">
+                                    <article class="rep-image"></article>
+                                </section>
+                                <section class="carrousel">
+                                    <article class="rep-image"></article>
+                                </section>
+                                <section class="carrousel">
+                                    <article class="rep-image">On working...</article>
+                                </section>
+                            </div>
+                            <button class="prev">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                            <button class="next">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
                     </section>
                 </section>
             </section>
@@ -139,16 +173,78 @@
                     </a>
                 </section>
             </section>
-            <section class="contactme">
+            <section class="contact-me">
                 <section class="content vertical-flex">
                     <h2 id="contactme">Contact Me</h2>
+                    <article class="flex">
+                        <section class="contact-info">
+                            <h3>Contact info</h3>
+                            <span class="flex">
+                                <i class="fa-brands fa-github"></i>
+                                <a href="https://github.com/francoandreDev" target="_blank">Github</a>
+                            </span>
+                            <span class="flex">
+                                <i class="fa-brands fa-linkedin"></i>
+                                <a href="https://www.linkedin.com/in/franco-andr%C3%A9-calmette-miyazawa-02000b231/" target="_blank">Linkedin</a>
+                            </span>
+                            <span class="flex">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="https://api.whatsapp.com/send?phone=+51 981121880&text=Hello, I came from your website" target="_blank">+51 981 121 880</a>
+                            </span>
+                            <span class="flex">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>Pueblo Libre, Lima, Perú</p>
+                            </span>
+                            <span class="flex">
+                                <i class="fa-solid fa-envelope"></i>
+                                <a href="mailto:francoandre.dev@gmail.com?Subject=I%20came%20from%20your%20website">francoandre.dev@gmail.com</a>
+                            </span>
+                        </section>
+                        <form class="grid-form" autocomplete="off">
+                            <label for="input-name">Name</label>
+                            <input
+                                type="text"
+                                id="input-name"
+                                placeholder="Your name"
+                                pattern="^[a-zA-Z\s]{3,60}$"
+                                required
+                            >
+                            <label for="input-tel">Phone number</label>
+                            <input type="tel" id="input-tel" placeholder="Your phone number">
+                            <label for="input-email">Email</label>
+                            <input
+                                type="email"
+                                id="input-email"
+                                placeholder="Your email"
+                                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                            >
+                            <label for="textarea-message">Your message</label>
+                            <textarea
+                                name=""
+                                id="textarea-message"
+                                cols="1"
+                                rows="3"
+                                placeholder="Type your comment here!"
+                            ></textarea>
+                            <button>Send Message</button>
+                        </form>
+                    </article>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7803.134077080004!2d-77.06523997410666!3d-12.073282565798625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPueblo%20Libre%2014084%2C%20Lima!5e0!3m2!1ses-419!2spe!4v1669598000031!5m2!1ses-419!2spe"
+                        width="400"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </section>
             </section>
         </main>
         <footer>
             <span>
-                2022
                 <a href="https://github.com/francoandreDev" target="_blank">Franco.dev</a>
+                2022
             </span>
         </footer>
     </body>
