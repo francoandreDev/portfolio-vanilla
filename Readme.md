@@ -9,9 +9,9 @@ This project is my web portfolio.
 | Folder | Sub-folders                     | Files                                                                |
 | ------ | ------------------------------- | -------------------------------------------------------------------- |
 | assets | file, images: {desktop, mobile} | cv.pdf, photo.png, {projects-desktop-images, projects-mobile-images} |
-| html   | -                               | index.html                                                           |
 | js     | -                               | main.js                                                              |
 | styles | -                               | normalize.css, style.css                                             |
+| -      | -                               | index.html                                                           |
 | -      | -                               | .gitignore                                                           |
 | -      | -                               | Readme.md                                                            |
 
