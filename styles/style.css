@@ -17,7 +17,7 @@
     --f-family-default: 'Poppins', sans-serif;
     --f-family-presentation: 'Roboto', sans-serif;
 
-    --number-cards-carrousel: 5
+    --number-cards-carrousel: 5;
 }
 
 * {
@@ -479,16 +479,16 @@ body {
         height: 100%;
     }
 
-    main .aboutme {
+    main .about-me {
         display: flex;
         justify-content: center;
     }
 
-    main .aboutme > .content {
+    main .about-me > .content {
         position: relative;
     }
 
-    main .aboutme .layer {
+    main .about-me .layer {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas:
@@ -500,13 +500,13 @@ body {
         justify-content: center;
     }
 
-    main .aboutme .layer > section:first-of-type {
+    main .about-me .layer > section:first-of-type {
         grid-area: sub-title;
         justify-self: center;
         align-self: center;
     }
 
-    main .aboutme .layer > article {
+    main .about-me .layer > article {
         display: flex;
         flex-direction: column;
         padding: 0;
@@ -520,18 +520,18 @@ body {
         color: var(--current-color-secondary);
     }
 
-    main .aboutme h2 {
+    main .about-me h2 {
         translate: 25% 0;
     }
 
-    main .aboutme .layer > section:last-of-type {
+    main .about-me .layer > section:last-of-type {
         margin-top: 2.2rem;
         grid-area: buttons;
         display: flex;
         gap: 1.5rem;
     }
 
-    main .aboutme .layer > section:last-of-type > button {
+    main .about-me .layer > section:last-of-type > button {
         padding: 1.2rem 2.5rem;
     }
 
@@ -727,18 +727,69 @@ body {
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        filter: brightness(.8);
-        -webkit-filter: brightness(.8);
-}
+        filter: brightness(0.8);
+        -webkit-filter: brightness(0.8);
+    }
+
+    .rep-image > .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0 10vw;
+        opacity: 0;
+        background-color: hsla(0, 0%, 0%, 0.6);
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        -webkit-transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        -moz-transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        -ms-transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        -o-transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .rep-image > .info > * {
+        margin: 0;
+        color: white;
+    }
+    .rep-image > .info h4 {
+        font-size: 2.5vw;
+    }
+    .rep-image > .info h5 {
+        font-size: 2vw;
+    }
 
     main > .projects button {
         position: absolute;
-        top: 50%;
-        translate: 0 -50%;
         z-index: 2;
         opacity: 1;
-        background-color: hsla(0, 0%, 0%, 0.3);
         padding: 10px 30px;
+        background-color: hsla(0, 0%, 0%, 0.4);
+        color: white;
+    }
+
+    main > .projects button.prev,
+    main > .projects button.next {
+        top: 50%;
+        translate: 0 -50%;
+        mix-blend-mode: luminosity;
+    }
+
+    main > .projects button.details {
+        bottom: 5vw;
+        background-color: hsla(0, 0%, 0%, 0.2);
+        opacity: 0.5;
+        font-size: 2vw !important;
+        mix-blend-mode: multiply transparent;
+    }
+
+    main > .projects button.details:hover {
+        opacity: 1;
+        background-color: hsla(0, 0%, 0%, 0.5);
     }
 
     main > .projects button:hover {
@@ -750,6 +801,10 @@ body {
         rotate: 180deg;
     }
     main > .projects button.next {
+        right: 7vw;
+    }
+
+    main > .projects button.details {
         right: 7vw;
     }
 
@@ -936,13 +991,39 @@ body {
         border-top: 1px solid var(--shadow-color);
     }
 
-    footer > span {
+    footer > article {
         display: flex;
+        flex-direction: column;
         gap: 0.5rem;
     }
-
     footer a {
         color: var(--color);
+    }
+
+    footer span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4em;
+    }
+
+    footer span p,
+    footer span p::before,
+    footer span p::after {
+        font-size: 70%;
+    }
+
+    footer span p {
+        margin: 0;
+        justify-self: flex-start;
+        align-self: flex-end;
+    }
+
+    footer span p::before {
+        content: '(';
+    }
+    footer span p::after {
+        content: ')';
     }
 }
 
@@ -1047,10 +1128,10 @@ body {
             width: 100%;
             align-items: center;
         }
-        main > section.aboutme > .content {
+        main > section.about-me > .content {
             width: 100%;
         }
-        main > section.aboutme .layer {
+        main > section.about-me .layer {
             gap: 0 5em;
         }
         main .contact-me article.flex {
@@ -1068,10 +1149,10 @@ body {
         }
     }
     @media screen and (max-width: 1000px) {
-        main > section.aboutme > .content {
+        main > section.about-me > .content {
             width: 80%;
         }
-        main .aboutme .layer {
+        main .about-me .layer {
             grid-template-columns: repeat(2, 1fr);
             grid-template-areas:
                 'sub-title sub-title'
@@ -1079,18 +1160,18 @@ body {
                 'buttons buttons';
         }
 
-        main .aboutme .layer > section:first-of-type {
+        main .about-me .layer > section:first-of-type {
             width: 100%;
             justify-self: center;
             align-items: center;
         }
 
-        main .aboutme h2 {
+        main .about-me h2 {
             translate: 0 0;
             text-align: center;
         }
 
-        main .aboutme .layer > section:last-of-type {
+        main .about-me .layer > section:last-of-type {
             width: 100%;
             justify-content: space-evenly;
             gap: 0;
@@ -1107,13 +1188,16 @@ body {
         main > .services .grid-services > article:nth-child(2n + 1):last-child {
             width: 100%;
         }
+        .rep-image > .info p {
+            display: none;
+        }
     }
     @media only screen and (max-width: 700px) {
         main > section.presentation > article {
             padding-left: 0;
             padding-right: 0;
         }
-        main .aboutme .layer > section:last-of-type {
+        main .about-me .layer > section:last-of-type {
             flex-direction: column;
             gap: 2.2em;
             justify-content: space-evenly;
@@ -1157,6 +1241,12 @@ body {
         main > .services .grid-services > article > p {
             display: none;
         }
+        .rep-image > .info h4 {
+            font-size: 1.1rem;
+        }
+        .rep-image > .info h5 {
+            font-size: 1rem;
+        }
         @media only screen and (max-width: 500px) {
             main h2 {
                 font-size: 30px;
@@ -1164,6 +1254,9 @@ body {
             }
             main .contact-me .flex > .contact-info > *:not(:nth-child(1)) {
                 padding-left: 0;
+            }
+            .carrousel h5 {
+                margin: 0
             }
         }
         @media only screen and (max-width: 450px) {

@@ -69,6 +69,7 @@ class CardCarrousel {
         this.card = currentCard;
         this.min = 0;
         this.max = 4;
+        this.showCards = new Array(this.max + 1).fill(false);
     }
     prevCard() {
         switch (this.card) {
@@ -93,12 +94,17 @@ class CardCarrousel {
     updatePositionCards(cards) {
         cards.style.translate = `calc(-1 * (80vw) * ${this.card}) 0`;
     }
+
+    updateShowCards(cardPosition) {
+        this.showCards[cardPosition] = !this.showCards[cardPosition];
+    }
 }
 
 const containerCarrousel = document.querySelector(
     '.projects .container-scroll'
 );
-const [carrousel, buttonPrev, buttonNext] = containerCarrousel.children;
+const [carrousel, buttonPrev, buttonNext, buttonDetails] =
+    containerCarrousel.children;
 const currentCard = new CardCarrousel(0);
 
 buttonPrev.onclick = () => {
@@ -109,6 +115,20 @@ buttonPrev.onclick = () => {
 buttonNext.onclick = () => {
     currentCard.nextCard();
     currentCard.updatePositionCards(carrousel);
+};
+
+buttonDetails.onclick = () => {
+    const cards = document.querySelectorAll(
+        'section.carrousel>article.rep-image>div.info'
+    );
+    const maxIndex = cards.length;
+    if (currentCard.card >= maxIndex) return;
+    currentCard.updateShowCards(currentCard.card);
+    currentCard.showCards.forEach((boolShow, index) => {
+        boolShow
+            ? (cards[index].style.opacity = 1)
+            : (cards[index].style.opacity = 0);
+    });
 };
 
 const sendEmail = () => {
