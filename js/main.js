@@ -91,7 +91,7 @@ class CardCarrousel {
         }
     }
     updatePositionCards(cards) {
-        cards.style.translate = `calc(-1 * (80vw) * ${this.card}) 0`
+        cards.style.translate = `calc(-1 * (80vw) * ${this.card}) 0`;
     }
 }
 
@@ -109,4 +109,41 @@ buttonPrev.onclick = () => {
 buttonNext.onclick = () => {
     currentCard.nextCard();
     currentCard.updatePositionCards(carrousel);
-}
+};
+
+const sendEmail = () => {
+    const [inputName, inputPhone, inputEmail, textAreaMessage] =
+        formContact.elements;
+    debugger;
+    console.log(
+        inputName.value,
+        inputPhone.value,
+        inputEmail.value,
+        textAreaMessage.value
+    );
+    const name = inputName.value;
+    const phone = inputPhone.value;
+    const email = inputEmail.value;
+    const message = textAreaMessage.value;
+    const data = {
+        name,
+        phone,
+        email,
+        message
+    };
+    let sendEmail = 'mailto: ';
+    sendEmail += escape('francoandre.dev@gmail.com');
+    sendEmail += `?subject=${escape('Message from contact me')}`;
+    sendEmail += `&body=Im ${data.name} - `;
+    if (phone) sendEmail += data.phone + ' - ';
+    if (email) sendEmail += data.email + ' - ';
+    if (message) sendEmail += data.message + '.';
+
+    window.location.href = sendEmail;
+};
+
+const formContact = document.querySelector('.contact-me form');
+
+formContact.onsubmit = () => {
+    sendEmail();
+};
