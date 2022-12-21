@@ -133,23 +133,22 @@ buttonDetails.onclick = () => {
     });
 };
 
-const cardsCarrousel = [document.querySelector('.projects .carrousel')];
+const cardsCarrousel = [
+    document.querySelector('.projects .container-carrousel')
+];
 const links = [
     'https://roaring-gelato-802b57.netlify.app',
     'https://chipper-bombolone-5b3ef8.netlify.app',
     'https://admirable-marigold-c2127c.netlify.app',
     'https://enchanting-creponne-feca9f.netlify.app',
-    ''
+    'on working'
 ];
 
-cardsCarrousel.forEach((card, index) => {
-    const link = links[index];
-    if (link) {
-        card.onclick = () => {
-            window.open(link);
-        };
+cardsCarrousel[currentCard.card].onclick = () => {
+    if (links[currentCard.card] !== 'on working') {
+        window.open(links[currentCard.card]);
     }
-});
+};
 
 const sendEmail = () => {
     const [inputName, inputPhone, inputEmail, textAreaMessage] =
