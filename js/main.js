@@ -125,22 +125,35 @@ buttonDetails.onclick = () => {
     if (currentCard.card >= maxIndex) return;
     currentCard.updateShowCards(currentCard.card);
     currentCard.showCards.forEach((boolShow, index) => {
-        boolShow
-            ? (cards[index].style.opacity = 1)
-            : (cards[index].style.opacity = 0);
+        if (cards[index]) {
+            boolShow
+                ? (cards[index].style.opacity = 1)
+                : (cards[index].style.opacity = 0);
+        }
     });
 };
+
+const cardsCarrousel = [document.querySelector('.projects .carrousel')];
+const links = [
+    'https://roaring-gelato-802b57.netlify.app',
+    'https://chipper-bombolone-5b3ef8.netlify.app',
+    'https://admirable-marigold-c2127c.netlify.app',
+    'https://enchanting-creponne-feca9f.netlify.app',
+    ''
+];
+
+cardsCarrousel.forEach((card, index) => {
+    const link = links[index];
+    if (link) {
+        card.onclick = () => {
+            window.open(link);
+        };
+    }
+});
 
 const sendEmail = () => {
     const [inputName, inputPhone, inputEmail, textAreaMessage] =
         formContact.elements;
-    debugger;
-    console.log(
-        inputName.value,
-        inputPhone.value,
-        inputEmail.value,
-        textAreaMessage.value
-    );
     const name = inputName.value;
     const phone = inputPhone.value;
     const email = inputEmail.value;
