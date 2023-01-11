@@ -17,7 +17,7 @@
     --f-family-default: 'Poppins', sans-serif;
     --f-family-presentation: 'Roboto', sans-serif;
 
-    --number-cards-carrousel: 5;
+    --number-cards-carrousel: 6;
 }
 
 * {
@@ -703,16 +703,19 @@ body {
     }
 
     main > .projects .container-carrousel > .carrousel:nth-child(1) {
-        background-image: url('/assets/images/desktop/desktop-weather.png');
+        background-image: url('/assets/images/weather.png');
     }
     main > .projects .container-carrousel > .carrousel:nth-child(2) {
-        background-image: url('/assets/images/desktop/desktop-pokeapi.png');
+        background-image: url('/assets/images/pokeapi.png');
     }
     main > .projects .container-carrousel > .carrousel:nth-child(3) {
-        background-image: url('/assets/images/desktop/desktop-E-commerce.png');
+        background-image: url('/assets/images/e-commerce.png');
     }
     main > .projects .container-carrousel > .carrousel:nth-child(4) {
-        background-image: url('/assets/images/desktop/desktop-hangman.png');
+        background-image: url('/assets/images/hangman.png');
+    }
+    main > .projects .container-carrousel > .carrousel:nth-child(5) {
+        background-image: url('/assets/images/weatherv2.png');
     }
 
     .rep-image {
